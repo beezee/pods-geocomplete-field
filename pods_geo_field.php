@@ -58,14 +58,6 @@ define( 'PODS_GEO_FIELD_DIR', plugin_dir_path( __FILE__ ) );
 class Pods_GeoComplete {
 
 	/**
-	 * Field Class Instance
-	 *
-	 * @var pods_geo_field instance
-	 * @since 0.0.1
-	 */
-	public $field;
-
-	/**
 	 * Constructor for the Pods_GeoComplete class
 	 *
 	 * Sets up all the appropriate hooks and actions
