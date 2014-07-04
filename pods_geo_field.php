@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Pods GeoComplete
-Plugin URI: https://github.com/beezee/pods_geocomplete
+Plugin URI: https://github.com/beezee/pods-geocomplete-field
 Description: Description
 Version: 0.0.1
 Author: beezeee
