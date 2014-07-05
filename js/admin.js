@@ -8,11 +8,20 @@
 					lat: result.geometry.location.lat(),
 					lng: result.geometry.location.lng()
 				}));
-			}
+			};
 		};
 		
-		var geoFailureCallbackForInput = function($input) {
-			alert('Unable to find that location');
+		var geoFailureCallbackForInput = function($acInput, $input) {
+			return function(event, result) {
+				console.log("geocoding failed", result);
+				alert('Unable to find that location');
+			};
+		};
+
+		var geoMultipleCallbackForInput = function($acInput, $input) {
+			return function(event, results) {
+				console.log("multiple results", results);
+			};
 		};
 
 		var initializeExistingValue = function($acInput, $input) {
@@ -31,7 +40,9 @@
 			$latlngInput = $(this).parent().find('.pods-form-ui-field-name-pods-meta-address');
 
 			$(this).geocomplete({map: $map})
-				.bind('geocode:result', geoSuccessCallbackForInput($(this), $latlngInput));
+				.bind('geocode:result', geoSuccessCallbackForInput($(this), $latlngInput))
+				.bind('geocode:error', geoFailureCallbackForInput($(this), $latlngInput))
+				.bind('geocode:multiple', geoMultipleCallbackForInput($(this), $latlngInput));
 
 			initializeExistingValue($(this), $latlngInput);
 		});
