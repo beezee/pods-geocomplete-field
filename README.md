@@ -13,4 +13,4 @@ The code below illustrates the properties available on this object and how you m
     echo $address->lat; // geocoded latitude
     echo $address->lng; // geocoded longitude
 
-Requires Pods 2.3.18 or later. (Please keep this notice in your plugin and set the appropriate version.)
+Requires Pods 2.3.18 or later.
