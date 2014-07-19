@@ -6,7 +6,10 @@
 				$input.val($.toJSON({
 					address: $acInput.val(),
 					lat: result.geometry.location.lat(),
-					lng: result.geometry.location.lng()
+					lng: result.geometry.location.lng(),
+          city: _.find(result.address_components, function(c) { return c.types[0] == 'locality'; }),
+          state: _.find(result.address_components, 
+            function(c) { return c.types[0] == 'administrative_area_level_1'; })
 				}));
 			};
 		};
