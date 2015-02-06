@@ -40,7 +40,7 @@
 		// Initialize geocomplete on any inputs expecting it
 		$('.pods-geocomplete-input').each(function() {
 			$map = $(this).parent().find('.pods-geocomplete-map');
-			$latlngInput = $(this).parent().find('.pods-form-ui-field-name-pods-meta-address');
+			$latlngInput = $(this).parent().find('.pods-form-ui-field-name-pods-field-address');
 
 			$(this).geocomplete({map: $map})
 				.bind('geocode:result', geoSuccessCallbackForInput($(this), $latlngInput))
